@@ -1,0 +1,184 @@
+Q1:-
+
+import java.io.*;
+import java.util.*;  
+
+public class Problem1{
+
+     public static void main(String []args){
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Input first number: ");
+        int p = sc.nextInt();  
+
+        System.out.print("Input second number: ");
+        int q = sc.nextInt(); 
+
+        System.out.print("Input third number: ");
+        int r = sc.nextInt(); 
+
+        System.out.print("Input fourth number: ");
+        int s = sc.nextInt(); 
+        
+        if(p == q && q == r && r == s) {
+            System.out.print("Numbers are equal!!");
+        }
+        else{
+            System.out.print("Numbers are not equal!!");
+        }
+     }
+}
+
+Q2:-
+
+import java.io.*;
+import java.util.*;  
+
+public class Problem2{
+
+     public static void main(String []args){
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Input first number: ");
+        double x = sc.nextDouble();  
+
+        System.out.print("Input second number: ");
+        double y = sc.nextDouble(); 
+        
+        if((x > 0) && (x < 1) && (y > 0) && (y < 1) ) {
+            System.out.print("True");
+        }
+        else{
+            System.out.print("False");
+        }
+     }
+}
+
+Q3:-
+
+import java.util.*;
+
+public class Problem3{
+	public static void main(String[] args) {
+        
+		boolean[][] arr = {{true, false, true}, {false, true, false}};
+		int row_length = arr.length;
+		int column_length = arr[0].length;
+		
+		for (int i = 0; i < row_length; i++) {
+			for (int j = 0; j < column_length; j++) {
+				
+				if (arr[i][j]) {
+					System.out.print(" t ");
+				} else {
+					System.out.print(" f ");
+				}
+				
+			}
+			System.out.println();
+		}	
+    }
+}
+
+
+Q4:-
+
+import java.util.*;
+
+public class Problem4{
+	public static void main(String[] args) {
+		int[][] arr = {
+				{10, 20, 30},
+				{40, 50, 60}
+		};
+		System.out.print("Original Array:\n");
+		print_array(arr);
+		System.out.println("After changing the rows and columns of the said array:");
+		transpose(arr);
+		}
+	
+	private static void transpose(int[][] arr) {
+		
+		int[][] newarr = new int[arr[0].length][arr.length];
+		
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[0].length; j++) {
+				newarr[j][i] = arr[i][j];
+			}
+		}
+		
+		print_array(newarr);
+	}
+    
+	private static void print_array(int[][] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[0].length; j++) {
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+	
+	}
+}
+
+Q5:-
+
+import java.util.*;
+import java.util.Arrays;
+
+public class p5 {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+       int temp;
+       System.out.println("Enter n:");
+        int n = obj.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter array values:");
+        for(int i=0;i<n;i++){
+            arr[i]=obj.nextInt();
+        }
+        for (int i = 0; i < arr.length; i++) {     
+            for (int j = i+1; j < arr.length; j++) {     
+               if(arr[i] < arr[j]) {    
+                   temp = arr[i];    
+                   arr[i] = arr[j];    
+                   arr[j] = temp;    
+               }     
+            }     
+        }    
+       System.out.println("Enter value of k:");
+        int k = obj.nextInt();
+        System.out.println("The highest "+k+" values are");
+       
+        for(int j=0;j<k;j++){
+            System.out.println(arr[j]+" ");
+        }
+    }
+    
+}
+
+
+Q6:-
+
+import java.util.*;
+
+public class Problem6{	
+	public static int countZeroes(int n) {
+    int ctr = 0;
+    String binaryNumber = Integer.toBinaryString(n);
+	System.out.print("Binary representation of "+n+" is: "+binaryNumber);
+    for (char ch : binaryNumber.toCharArray()) {
+      ctr += ch == '0' ? 1 : 0;
+    }
+    return ctr;
+  }	 
+
+    public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        int n = sc.nextInt();
+		System.out.println("\nNumber of zero bits: " + countZeroes(n));
+		}
+}
